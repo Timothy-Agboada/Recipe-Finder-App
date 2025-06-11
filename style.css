@@ -1,0 +1,198 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fff8f0;
+    color: #4a4a4a;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+header h1 {
+    font-weight: 700;
+    color: #3d3d3d;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+header p {
+    color: #7a7a7a;
+    font-size: 1.1em;
+}
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+    border-radius: 50px;
+    width: 100%;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#searchInput {
+    width: 100%;
+    padding: 15px 25px;
+    font-size: 16px;
+    border: none;
+    border-radius: 50px 0 0 50px;
+    outline: none;
+}
+#searchBtn {
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: 600;
+    background: linear-gradient(135deg, #ff8c42, #ffbc3b);
+    color: white;
+    border: none;
+    border-radius: 0 50px 50px 0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+#searchBtn:hover {
+    filter: brightness(1.1);
+}
+
+#results-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.recipe-card {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #eee;
+}
+.recipe-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+}
+.recipe-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+.recipe-card .recipe-info {
+    padding: 20px;
+    flex-grow: 1;
+}
+.recipe-card h3 {
+    margin: 0;
+    color: #3d3d3d;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.message {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: #7a7a7a;
+    font-size: 1.2em;
+    padding: 40px 0;
+}
+
+.modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+.modal-container.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+.modal-content {
+    background-color: #fff;
+    padding: 35px;
+    border-radius: 15px;
+    max-width: 90%;
+    width: 750px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    transform: scale(1);
+    transition: transform 0.3s ease;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+.modal-container.hidden .modal-content {
+    transform: scale(0.95);
+}
+.modal-close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: #f1f1f1;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #888;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.2s, color 0.2s;
+}
+.modal-close-btn:hover {
+    background-color: #e0e0e0;
+    color: #333;
+}
+#modalRecipeDetails h2 { 
+    margin-top: 0; 
+    color: #3d3d3d; 
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+#modalRecipeDetails img {
+    width: 100%;
+    height: auto;
+    max-height: 350px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+#modalRecipeDetails h4 {
+    font-size: 1.3em;
+    color: #3d3d3d;
+    border-bottom: 2px solid #ffbc3b;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+#modalRecipeDetails ul {
+    list-style-type: none;
+    padding-left: 0;
+    columns: 2;
+    column-gap: 40px;
+}
+#modalRecipeDetails ul li {
+    margin-bottom: 10px;
+    color: #5a5a5a;
+}
+#modalRecipeDetails p {
+    line-height: 1.8;
+    color: #5a5a5a;
+}

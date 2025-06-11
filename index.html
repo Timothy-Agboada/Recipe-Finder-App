@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Finder</title>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Recipe Finder</h1>
+            <p>Find delicious recipes based on the ingredients you have!</p>
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Enter an ingredient (e.g., chicken, eggs)...">
+                <button id="searchBtn">Search</button>
+            </div>
+        </header>
+
+        <main id="results-container">
+            <div id="message" class="message">
+                <p>Type an ingredient and click search to find recipes!</p>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal Structure -->
+    <div id="recipeModal" class="modal-container hidden">
+        <div class="modal-content">
+            <button id="modalCloseBtn" class="modal-close-btn">&times;</button>
+            <div id="modalRecipeDetails">
+                <!-- Detailed recipe content will be injected here -->
+            </div>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
